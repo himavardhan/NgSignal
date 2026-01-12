@@ -57,3 +57,29 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+Update Node.js
+You need Node.js 18+ (preferably 20+). Options:
+Option A: Using nvm (Node Version Manager) - Recommended
+
+# Install nvm if you don't have it
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+
+# Install and use Node.js 20 LTS
+nvm install 20
+nvm use 20
+
+Step 2: Install Angular CLI
+
+After updating Node.js, install Angular CLI:
+npm install -g @angular/cli@latest
+
+Verify Installation
+ng version
+
+Step 4: Create a New Angular Project
+Once Angular CLI is installed, you can create a new project:
+
+ng new my-angular-app
+cd my-angular-app
+ng serve
