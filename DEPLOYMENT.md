@@ -58,7 +58,7 @@ ng build --base-href /NgSignal/
 
 3. **Deploy to GitHub Pages:**
 ```bash
-npx angular-cli-ghpages --dir=dist/ng-signal/browser
+npx angular-cli-ghpages --dir=dist/NgSignal/browser
 ```
 
 4. **Enable GitHub Pages in repository settings:**
