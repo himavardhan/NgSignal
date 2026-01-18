@@ -1,1 +1,0 @@
-ng generate component about --standalone --skip-tests

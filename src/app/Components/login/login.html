@@ -1,0 +1,26 @@
+
+<div class="login-container">
+    <h1>{{ title() }}</h1>
+    <form>
+      <div class="form-group">
+        <p-floatlabel variant="on">
+            <input pInputText id="on_label" [value]="username()" (input)="username.set($event.target.value)" autocomplete="off" />
+            <label for="on_label">User name</label>
+        </p-floatlabel>
+      </div>
+
+      <div class="form-group">
+        <p-floatlabel variant="on">
+            <p-password [(ngModel)]="password" id="on_password" [ngModelOptions]="{standalone: true}" [toggleMask]="true" />
+            <label for="on_label">Password</label>
+        </p-floatlabel>
+      </div>
+
+      <div class="button-group">
+        <p-button label="Login" severity="success" (onClick)="OpenDashboard()"/>
+        <p-button label="Sign Up" severity="info" (onClick)="OpenSignUpPage()"/>
+      </div>
+    </form>
+    <router-outlet />
+  </div>
+
