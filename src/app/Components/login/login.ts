@@ -2,12 +2,10 @@
 import { Component, signal } from '@angular/core';
 import { SharedModule } from '../../SharedModules/SharedModule';
 import { Router } from '@angular/router';
-import { RouterOutlet } from '@angular/router';
-
 
 @Component({
   selector: 'app-login',
-  imports: [SharedModule,RouterOutlet],
+  imports: [SharedModule],
   templateUrl: './login.html',
   styleUrl: './login.scss',
   standalone: true

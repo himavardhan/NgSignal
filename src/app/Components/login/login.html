@@ -11,7 +11,7 @@
 
       <div class="form-group">
         <p-floatlabel variant="on">
-            <p-password [(ngModel)]="password" id="on_password" [ngModelOptions]="{standalone: true}" [toggleMask]="true" />
+            <p-password inputStyleClass="w-100" [(ngModel)]="password" id="on_password" [ngModelOptions]="{standalone: true}" [toggleMask]="true" />
             <label for="on_label">Password</label>
         </p-floatlabel>
       </div>
@@ -21,6 +21,5 @@
         <p-button label="Sign Up" severity="info" (onClick)="OpenSignUpPage()"/>
       </div>
     </form>
-    <router-outlet />
   </div>
 
