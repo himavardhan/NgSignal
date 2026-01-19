@@ -1,1 +1,0 @@
-import{Ra as o,Sa as s,kb as n,za as t}from"./chunk-RKCYBVQG.js";var r=class e{static \u0275fac=function(a){return new(a||e)};static \u0275cmp=t({type:e,selectors:[["app-dashboard"]],decls:2,vars:0,template:function(a,i){a&1&&(o(0,"p"),n(1,"dashboard layout works!"),s())},encapsulation:2})};export{r as Dashboard};
