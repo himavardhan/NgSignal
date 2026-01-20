@@ -1,1 +1,27 @@
-<p>header works!</p>
+
+<div class="layout-topbar">
+    <div class="layout-topbar-logo-container">
+        <button class="layout-menu-button layout-topbar-action" (click)="layoutService.onMenuToggle()">
+            <img width="50" height="50" src="OB_favicon.png" alt="OpenB" />
+        </button>
+        <a class="layout-topbar-logo" routerLink="/">
+            <span>OpenBills</span>
+        </a>
+    </div>
+
+    <div class="layout-topbar-actions">
+        
+
+      
+
+        <div class="layout-topbar-menu hidden lg:block">
+            <div class="layout-topbar-menu-content">
+                <h5>Welcome, {{userName}}</h5>
+                <button type="button" class="layout-topbar-action">
+                    <i class="pi pi-user"></i>
+                    <span>Profile</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
