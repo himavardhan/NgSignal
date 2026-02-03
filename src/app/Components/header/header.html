@@ -9,11 +9,7 @@
         </a>
     </div>
 
-    <div class="layout-topbar-actions">
-        
-
-      
-
+    <div class="layout-topbar-actions"> 
         <div class="layout-topbar-menu hidden lg:block">
             <div class="layout-topbar-menu-content">
                 <h5>Welcome, {{userName}}</h5>
@@ -24,4 +20,15 @@
             </div>
         </div>
     </div>
+</div>
+<div class="content-container">
+<p-tabs  value="0" (onChange)="onTabChange($event)">
+    <p-tablist>
+        @for (tab of tabs; track tab.value) {
+            <p-tab [value]="tab.value" 
+            [routerLink]="tab.route"
+           >{{ tab.title }}</p-tab>
+        }
+    </p-tablist>    
+</p-tabs>
 </div>
