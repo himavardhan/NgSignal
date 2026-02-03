@@ -1,1 +1,0 @@
-import{$a as n,Ga as t,_a as a,vb as o}from"./chunk-FRZWXR7O.js";var i=class s{static \u0275fac=function(e){return new(e||s)};static \u0275cmp=t({type:s,selectors:[["app-assets"]],decls:2,vars:0,template:function(e,m){e&1&&(a(0,"p"),o(1,"assets works!"),n())},encapsulation:2})};export{i as Assets};
