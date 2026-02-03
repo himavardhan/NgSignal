@@ -1,1 +1,0 @@
-import{Ga as t,Ya as o,Za as s,rb as n}from"./chunk-E6DKVWIE.js";var r=class e{static \u0275fac=function(a){return new(a||e)};static \u0275cmp=t({type:e,selectors:[["app-dashboard"]],decls:2,vars:0,template:function(a,i){a&1&&(o(0,"p"),n(1,"dashboard layout works!"),s())},encapsulation:2})};export{r as a};

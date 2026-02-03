@@ -1,0 +1,1 @@
+import{$a as p,Ga as t,_a as i,vb as o}from"./chunk-FRZWXR7O.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-sign-up"]],decls:2,vars:0,template:function(e,m){e&1&&(i(0,"p"),o(1,"sign-up works!"),p())},encapsulation:2})};export{s as a};
