@@ -6,13 +6,16 @@ import { SharedModule } from '../../SharedModules/SharedModule';
   selector: 'app-assets',
   imports: [SharedModule],
   templateUrl: './assets.html',
-  styleUrl: './assets.scss',
   standalone: true
 })
 export class Assets {
-
+  value: string = '';
   addProperty(){
     console.log('Add Property button clicked');
+  }
+  clearForm(){
+    this.value = '';
+    console.log('Clear button clicked, form reset');
   }
    
 }

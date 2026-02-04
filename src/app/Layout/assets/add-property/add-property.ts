@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
+import {form, FormField, required, email} from '@angular/forms/signals';
+
 
 @Component({
   selector: 'app-add-property',
-  imports: [],
+  imports: [FormField],
   templateUrl: './add-property.html',
-  styleUrl: './add-property.scss',
   standalone: true
 })
 export class AddProperty {
+
+
 
 }
