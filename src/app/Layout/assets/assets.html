@@ -1,36 +1,36 @@
 <div class="mt-4 grid col-offset-4">
 <p-card header="Add New Property">
-    <div class="m-1">
+    <div class="m-1 mt-2">
             <p-floatlabel variant="on">
-                    <input id="property_name"  type="text" pInputText [(ngModel)]="value" />
-                    <label >Your Property name: {{value}}</label>
+                    <input id="property_name"  type="text" pInputText [formControl]="propertyName" />
+                    <label >Your Property name: {{propertyName.value}}</label>
             </p-floatlabel>
         </div>
-    <div class="m-1">
+    <div class="m-1 mt-2">
      <p-floatlabel variant="on">
             <input id="address1"  type="text" pInputText [(ngModel)]="value" />
             <label >Address Line1: {{value}}</label>
     </p-floatlabel>
     </div>
-    <div class="m-1">
+    <div class="m-1 mt-2">
      <p-floatlabel variant="on">
             <input id="address2"  type="text" pInputText [(ngModel)]="value" />
             <label >Address Line2: {{value}}</label>
     </p-floatlabel>
     </div>
-      <div class="m-1">
+      <div class="m-1 mt-2">
         <p-floatlabel variant="on">
             <input id="city"  type="text" pInputText [(ngModel)]="value" />
             <label >City: {{value}}</label>
     </p-floatlabel>
       </div>
-        <div class="m-1">
+        <div class="m-1 mt-2">
       <p-floatlabel variant="on">
             <input id="state"  type="text" pInputText [(ngModel)]="value" />
             <label >State: {{value}}</label>
     </p-floatlabel>
         </div>
-            <div class="m-1">
+            <div class="m-1 mt-2">
      <p-floatlabel variant="on">
             <input id="zip"  type="text" pInputText [(ngModel)]="value" />
             <label >Zip Code: {{value}}</label>

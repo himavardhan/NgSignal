@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../SharedModules/SharedModule';
-
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-assets',
@@ -10,6 +10,7 @@ import { SharedModule } from '../../SharedModules/SharedModule';
 })
 export class Assets {
   value: string = '';
+  propertyName = new FormControl('');
   addProperty(){
     console.log('Add Property button clicked');
   }
