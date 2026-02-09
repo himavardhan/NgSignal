@@ -1,0 +1,24 @@
+
+<div class="chat-container">
+    <div *ngFor="let message of messages; let i = index" class="message" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'OpenAIbot'}">
+        <p>{{ message.text }}</p>
+    </div>
+</div>
+<div class="position-fixed-bottom">
+    
+          <div class="grid">
+           @if(isLoading()) {
+            <div class="col-offset-4 col-12 md:col-3 lg:col-4 flex align-items-center">
+            <p-skeleton shape="circle" size="1rem" class="mr-2" />
+            <p-skeleton shape="circle" size="2rem" class="mr-2" />
+            <p-skeleton shape="circle" size="3rem" class="mr-2" />
+            </div>
+           }
+            <div class="ob-input col-offset-4 col-12 md:col-3 lg:col-4">
+             <input [disabled]="isLoading()" type="text" width="100" placeholder="Ask GPT 4 mini somthing..." pInputText pSize="large" [value]="userMesaage()" (input)="userMesaage.set($event.target.value)"  (keydown.enter)="sendMessage(userMesaage())" />  
+            </div>
+            <div class="col-12 md:col-2 lg:col-3">
+             <p-button icon="pi pi-send" aria-label="Save"  (click)="sendMessage(userMesaage())"/>
+            </div>
+        </div>
+</div>

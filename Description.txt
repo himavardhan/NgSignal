@@ -1,1 +1,11 @@
 This Project is going to host in Github
+
+Angular (Frontend)
+   |
+   |  HTTP / Streaming (SSE)
+   v
+Node.js / NestJS (Backend)
+   |
+   |  LangChain + OpenAI
+   v
+OpenAI LLM

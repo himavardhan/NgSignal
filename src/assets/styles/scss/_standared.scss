@@ -3,10 +3,13 @@
 }
 
 .content-container{
-    margin-top:4rem;
+    margin-top:3rem;
     box-sizing:border-box;
-    height:calc(100% - 4rem);
     overflow:auto;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    background-color: white;
 }
 
 // Margin Utilities
@@ -55,4 +58,58 @@
 
 .flex{
     display:flex;
+}
+
+.position-fixed-bottom{
+    position:fixed;
+    bottom:0;
+    width:100%;
+}
+
+.flex-center{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.ob-input{
+   input {
+    width:100%;
+    }  
+}
+
+.chat-container{
+    display:flex;
+    flex-direction:column;
+    gap:0.5rem;
+    padding:4rem 15rem 4rem;
+    box-sizing:border-box;
+    overflow:auto;
+    bottom: 4rem;
+    top: 3rem;
+    position: relative;
+
+}
+
+.container{
+    width:100%;
+    height:100%;
+    position: relative;
+    top:7rem
+}
+
+.user-message{
+    background-color:#DCF8C6;
+    padding:0.5rem 1rem;
+    border-radius:10px;
+    max-width:70%;
+    margin-left:auto;
+}
+
+.bot-message{
+    background-color:#F1F0F0;
+    padding:0.5rem 1rem;
+    border-radius:10px;
+    max-width:70%;
+    margin-right:auto;
 }
