@@ -1,1 +1,0 @@
-import{$a as o,Ha as n,ab as c,wb as s}from"./chunk-7N65BMP4.js";var a=class e{static \u0275fac=function(t){return new(t||e)};static \u0275cmp=n({type:e,selectors:[["app-contact-us"]],decls:3,vars:0,consts:[[1,"container"]],template:function(t,p){t&1&&(o(0,"div",0)(1,"p"),s(2,"contact-us works!"),c()())},encapsulation:2})};export{a as ContactUs};

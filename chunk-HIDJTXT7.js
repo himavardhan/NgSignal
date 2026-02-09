@@ -1,0 +1,1 @@
+import{Ha as i,bb as n,cb as o,yb as m}from"./chunk-PSSCZRRA.js";var p=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=i({type:t,selectors:[["app-gpt5mini"]],decls:2,vars:0,template:function(e,s){e&1&&(n(0,"p"),m(1,"gpt5mini works!"),o())},encapsulation:2})};export{p as GPT5mini};
