@@ -7,6 +7,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
+import { TableModule } from 'primeng/table';
+
 
 
 
@@ -17,7 +19,8 @@ const allModule = [FloatLabelModule, ButtonModule,
     ReactiveFormsModule,
     CardModule,
     CommonModule,
-    SkeletonModule
+    SkeletonModule,
+    TableModule
 ];
 @NgModule({
   imports: allModule,

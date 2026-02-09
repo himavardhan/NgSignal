@@ -1,11 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { email } from '@angular/forms/signals';
 import { TabsModule } from 'primeng/tabs';
+import { AssetService } from '../../services/assetservice';
+import { PropertyList } from '../assets/property-list/property-list';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TabsModule],
+  imports: [TabsModule, PropertyList],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
@@ -29,9 +31,11 @@ users = [{
 }
 ]
 
+  assets = inject(AssetService).getAssets();
   constructor() { }
 
   ngOnInit(): void {
+    console.log('Assets in Dashboard:', this.assets);
   }
 
 }

@@ -2,38 +2,53 @@
 <p-card header="Add New Property">
     <div class="m-1 mt-2">
             <p-floatlabel variant="on">
-                    <input id="property_name"  type="text" pInputText [formControl]="propertyName" />
-                    <label >Your Property name: {{propertyName.value}}</label>
+                    <input id="property_name" name="propertyName"  type="text" pInputText 
+                    [value]="propertyData().propertyName" 
+                    (input)="updatePropertyField('propertyName', $event)" autocomplete="off"
+                    />
+                    <label >Your Property name </label>
             </p-floatlabel>
         </div>
     <div class="m-1 mt-2">
      <p-floatlabel variant="on">
-            <input id="address1"  type="text" pInputText [(ngModel)]="value" />
-            <label >Address Line1: {{value}}</label>
+            <input id="address1"  name="addressLine1" type="text" pInputText 
+            [value]="propertyData().addressLine1"
+            (input)="updatePropertyField('addressLine1', $event)" autocomplete="off"
+            />
+            <label >Address Line1: {{propertyData().addressLine1}}</label>
     </p-floatlabel>
     </div>
     <div class="m-1 mt-2">
      <p-floatlabel variant="on">
-            <input id="address2"  type="text" pInputText [(ngModel)]="value" />
-            <label >Address Line2: {{value}}</label>
+            <input id="address2" name="addressLine2" type="text" pInputText 
+            [value]="propertyData().addressLine2"
+            (input)="updatePropertyField('addressLine2', $event)" autocomplete="off"
+            />
+            <label >Address Line2: {{propertyData().addressLine2}}</label>
     </p-floatlabel>
     </div>
       <div class="m-1 mt-2">
         <p-floatlabel variant="on">
-            <input id="city"  type="text" pInputText [(ngModel)]="value" />
-            <label >City: {{value}}</label>
+            <input id="city"  type="text" name="city" pInputText [value]="propertyData().city" 
+            (input)="updatePropertyField('city', $event)" autocomplete="off"
+            />
+            <label >City: {{propertyData().city}}</label>
     </p-floatlabel>
       </div>
         <div class="m-1 mt-2">
       <p-floatlabel variant="on">
-            <input id="state"  type="text" pInputText [(ngModel)]="value" />
-            <label >State: {{value}}</label>
+            <input id="state"  type="text" name="state" pInputText [value]="propertyData().state"
+            (input)="updatePropertyField('state', $event)" autocomplete="off"
+            />
+            <label >State: {{propertyData().state}}</label>
     </p-floatlabel>
         </div>
             <div class="m-1 mt-2">
      <p-floatlabel variant="on">
-            <input id="zip"  type="text" pInputText [(ngModel)]="value" />
-            <label >Zip Code: {{value}}</label>
+            <input id="zip"  type="text" name="zipCode" pInputText [value]="propertyData().zipCode"
+            (input)="updatePropertyField('zipCode', $event)" autocomplete="off"
+            />
+            <label >Zip Code: {{propertyData().zipCode}}</label>
     </p-floatlabel>
     </div>
 
@@ -46,4 +61,8 @@
     </div>
 </div>
 </p-card>
+</div>
+
+<div class="container mt-4">
+ <app-property-list></app-property-list>
 </div>
