@@ -1,7 +1,7 @@
 
 <div class="chat-container">
     <div *ngFor="let message of messages; let i = index" class="message" [ngClass]="{'user-message': message.sender === 'user', 'bot-message': message.sender === 'OpenAIbot'}">
-        <p>{{ message.text }}</p>
+        <p [innerHTML]="message.text"></p>
     </div>
 </div>
 <div class="position-fixed-bottom">
