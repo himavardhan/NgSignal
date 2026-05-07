@@ -3,11 +3,12 @@ import { email } from '@angular/forms/signals';
 import { TabsModule } from 'primeng/tabs';
 import { AssetService } from '../../services/assetservice';
 import { PropertyList } from '../assets/property-list/property-list';
+import { BookingForm } from '../../Components/booking-form/booking-form';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TabsModule, PropertyList],
+  imports: [TabsModule, PropertyList, BookingForm],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })

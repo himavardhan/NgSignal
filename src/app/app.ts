@@ -10,4 +10,5 @@ import { RouterOutlet } from '@angular/router';
 export class App {
   protected readonly title = signal('NgSignal');
   protected readonly name = signal('Himavardhan');
+  public readonly lastname = signal('donuru');
 }
