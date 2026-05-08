@@ -1,7 +1,12 @@
 
 <form [formGroup]="bookingForm"  (ngSubmit)="onSubmit()">
    <label for="depart"> Departure Place </label>
-   <input type="text" formControlName="depart" id="depart" aria-label="Departure Place" > <br><br>
+   <input type="text" formControlName="depart" id="depart" aria-label="Departure Place" > 
+   @if((departInfo.touched || departInfo.dirty) && departInfo.invalid){
+       @if(departInfo.hasError('required')) {<span> Departure is required  </span> <br>}
+       @if(departInfo.hasError('minlength')){ <span> Minumium length 4   </span> <br>}
+   }
+   <br><br>
 
    <label for="arrival"> Arrival Place </label>
    <input type="text" formControlName="arrival" id="arrival" aria-label="Arrival Place" > <br><br>
