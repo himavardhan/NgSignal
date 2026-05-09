@@ -1,0 +1,1 @@
+import{Cb as o,Ka as t,fb as i,gb as p}from"./chunk-ALAEV464.js";var s=class n{static \u0275fac=function(e){return new(e||n)};static \u0275cmp=t({type:n,selectors:[["app-sign-up"]],decls:2,vars:0,template:function(e,m){e&1&&(i(0,"p"),o(1,"sign-up works!"),p())},encapsulation:2})};export{s as a};
