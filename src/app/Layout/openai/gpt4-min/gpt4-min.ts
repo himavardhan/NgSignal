@@ -1,5 +1,5 @@
 import { finalize } from 'rxjs/operators';
-import { Component, signal } from '@angular/core';
+import { Component, OnDestroy, signal } from '@angular/core';
 import { SharedModule } from '../../../SharedModules/SharedModule';
 import { OpenSourceLlmService } from '../../../services/openSourceLlmService';
 
@@ -10,13 +10,18 @@ import { OpenSourceLlmService } from '../../../services/openSourceLlmService';
   styleUrl: './gpt4-min.scss',
   standalone: true,
 })
-export class GPT4Min {
+export class GPT4Min implements OnDestroy {
   userMesaage = signal('');
   aiResponse = signal('');
   isLoading = signal(false);
   messages :{ text: string, sender: 'user' | 'OpenAIbot' }[] = [];
+  private scrollTimer: ReturnType<typeof setTimeout> | null = null;
 
 constructor(private openSourceLlmService: OpenSourceLlmService) {}
+
+ngOnDestroy() {
+  if (this.scrollTimer) clearTimeout(this.scrollTimer);
+}
 
 async sendMessage(userInput: string) {
   if (!userInput.trim()) return; // Ignore empty messages
@@ -33,6 +38,13 @@ async sendMessage(userInput: string) {
         // Add OpenAI's response to the chat
         this.messages.push({ text: res.response, sender: 'OpenAIbot' });
         this.userMesaage.set(''); // Clear the input field after sending
+        if (this.scrollTimer) clearTimeout(this.scrollTimer);
+        this.scrollTimer = setTimeout(()=>{
+          document.getElementById(`message${this.messages.length-1}`)?.scrollIntoView();
+        },200);
+
+        console.log('last message Div ='+`message${this.messages.length-1}`);
+        
       },
       error: (err) => {
         console.error("Error sending message to OpenAI:", err);
