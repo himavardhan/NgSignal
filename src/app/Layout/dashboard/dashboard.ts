@@ -4,11 +4,12 @@ import { TabsModule } from 'primeng/tabs';
 import { AssetService } from '../../services/assetservice';
 import { PropertyList } from '../assets/property-list/property-list';
 import { BookingForm } from '../../Components/booking-form/booking-form';
+import { BookingTemplateForm } from '../../Components/booking-template-form/booking-template-form';
 
 
 @Component({
   selector: 'app-dashboard',
-  imports: [TabsModule, PropertyList, BookingForm],
+  imports: [TabsModule, PropertyList, BookingForm, BookingTemplateForm],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',
 })
