@@ -5,7 +5,7 @@ import { inject, Injectable } from "@angular/core";
     providedIn: 'root'
 })
 export class OpenSourceLlmService {
-    private apiUrl = 'http://192.168.1.68:3032/api/v1/chat?message='; // Update with your backend API URL
+    private apiUrl = 'http://127.0.0.1:3032/api/v1/chat?message='; // Update with your backend API URL
     private http = inject(HttpClient);
 
     sendMessage(message: string) {
@@ -21,7 +21,7 @@ export class OpenSourceLlmService {
     sendMessageStream(message: string,
         onData: (chunk: string) => void, onclose: () => void) {
     const source = new EventSource(
-      `http://192.168.1.68:3032/api/v1/chat-stream?message=${encodeURIComponent(message)}`
+      `http://127.0.0.1:3032/api/v1/chat-stream?message=${encodeURIComponent(message)}`
     );
 
     source.onmessage = (event) => onData(event.data);
@@ -35,7 +35,7 @@ export class OpenSourceLlmService {
     // sendMessageStream(message: string,) {
     //    let aiMessage = '';
     //     try {
-    //     const source = new EventSource('http://192.168.1.68:3032/api/v1/chat-stream?message=' + encodeURIComponent(message));
+    //     const source = new EventSource('http://127.0.0.1:3032/api/v1/chat-stream?message=' + encodeURIComponent(message));
     //     source.onmessage = (event) => {
     //     aiMessage += event.data;
     //     console.log("Received chunk from OpenAI:", aiMessage);
