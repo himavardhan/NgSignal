@@ -14,7 +14,10 @@
             <p-skeleton shape="circle" size="3rem" class="mr-2" />
             </div>
            }
-            <div class="ob-input col-offset-4 col-12 md:col-3 lg:col-4">
+              <div class="col-offset-2 col-1 md:col-2 lg:col-2">
+            <p-select [options]="models()" [(ngModel)]="selectedModel" optionLabel="name" placeholder="Select Mode" class="w-full md:w-56" />
+        </div>
+            <div class="ob-input  col-12 md:col-3 lg:col-4">
              <input [disabled]="isLoading()" type="text" width="100" placeholder="Ask GPT 4 mini somthing..." pInputText pSize="large" [value]="userMesaage()" (input)="userMesaage.set($event.target.value)"  (keydown.enter)="sendMessage(userMesaage())" />  
             </div>
             <div class="col-12 md:col-2 lg:col-3">

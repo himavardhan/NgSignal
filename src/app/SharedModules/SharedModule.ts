@@ -8,7 +8,7 @@ import { CardModule } from 'primeng/card';
 import { CommonModule } from '@angular/common';
 import { SkeletonModule } from 'primeng/skeleton';
 import { TableModule } from 'primeng/table';
-
+import { SelectModule } from 'primeng/select';
 
 
 
@@ -20,7 +20,8 @@ const allModule = [FloatLabelModule, ButtonModule,
     CardModule,
     CommonModule,
     SkeletonModule,
-    TableModule
+    TableModule,
+    SelectModule
 ];
 @NgModule({
   imports: allModule,

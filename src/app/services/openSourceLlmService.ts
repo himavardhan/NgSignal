@@ -8,9 +8,9 @@ export class OpenSourceLlmService {
     private apiUrl = 'http://127.0.0.1:3032/api/v1/chat?message='; // Update with your backend API URL
     private http = inject(HttpClient);
 
-    sendMessage(message: string) {
+    sendMessage(message: string,llm:string) {
         try {
-        return this.http.get<{response: string}>(this.apiUrl + encodeURIComponent(message));
+        return this.http.get<{response: string}>(this.apiUrl + encodeURIComponent(message)+`&model=${encodeURIComponent(llm)}`);
 
         }catch(err){
             console.error("Error sending message to OpenAI:", err);

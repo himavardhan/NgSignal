@@ -1,5 +1,5 @@
-import { finalize } from 'rxjs/operators';
-import { Component, OnDestroy, signal } from '@angular/core';
+
+import { Component, OnInit,OnDestroy, signal } from '@angular/core';
 import { SharedModule } from '../../../SharedModules/SharedModule';
 import { OpenSourceLlmService } from '../../../services/openSourceLlmService';
 
@@ -10,21 +10,44 @@ import { OpenSourceLlmService } from '../../../services/openSourceLlmService';
   styleUrl: './gpt4-min.scss',
   standalone: true,
 })
-export class GPT4Min implements OnDestroy {
+export class GPT4Min implements  OnInit,OnDestroy {
   userMesaage = signal('');
   aiResponse = signal('');
   isLoading = signal(false);
+  selectedModel = {name: 'GPT-4.1-MINI', code: 'gpt-4.1-mini'};
   messages :{ text: string, sender: 'user' | 'OpenAIbot' }[] = [];
   private scrollTimer: ReturnType<typeof setTimeout> | null = null;
+  models = signal<any[]>([]);
+
 
 constructor(private openSourceLlmService: OpenSourceLlmService) {}
+
+ngOnInit() {
+        this.models.set([
+            { name: 'GPT-5.2', code: 'gpt-5.1' },
+            { name: 'GPT-5-MINI', code: 'gpt-5-mini' },
+            { name: 'GPT-5-NANO', code: 'gpt-5-nano' },
+            { name: 'GPT-4.1', code: 'gpt-4.1' },
+            { name: 'GPT-4.1-MINI', code: 'gpt-4.1-mini' },
+            { name: 'Claude Opus 4.7', code: '' },
+            { name: 'Claude Sonnet 4.6', code: '' }
+        ]);
+    }
 
 ngOnDestroy() {
   if (this.scrollTimer) clearTimeout(this.scrollTimer);
 }
 
+
+/** Chat with  claude AI models */
+//Claude Opus 4.7
+//Claude Sonnet 4.6
+//Claude H
+
 async sendMessage(userInput: string) {
   if (!userInput.trim()) return; // Ignore empty messages
+
+  let llm =this.selectedModel.code;
 
   // Add user message to the chat
   this.messages.push({ text: userInput, sender: 'user' });
@@ -32,7 +55,7 @@ async sendMessage(userInput: string) {
   this.isLoading.set(true);
   try {
     // Send the message to the OpenAI service and await the response
-    const response = await this.openSourceLlmService.sendMessage(userInput).subscribe({
+    const response = await this.openSourceLlmService.sendMessage(userInput,llm).subscribe({
       next: (res) => {
         console.log("Received response from OpenAI:", res);
         // Add OpenAI's response to the chat
