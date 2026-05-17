@@ -23,7 +23,7 @@ export class Header implements AfterViewInit{
   tabs = [
     { title: 'Dashboard', value: '0',  component: 'Dashboard',route:'dashboard' },
     { title: 'Assets Group', value: '1', component: 'Assets',route:'assets' },
-    {title: 'Chat Bot - GPT4', value:'2', component:'GPT4Min',route:'gpt4mini'},
+    {title: 'Chat Bot - GPT', value:'2', component:'GPT4Min',route:'gpt4mini'},
     { title: 'Contact Us', value: '3', component: 'ContactUsComponent',route:'contactUs' }
 ];
   constructor(private userDetails: UserDetails,public layoutService: LayoutService) {

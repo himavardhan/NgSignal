@@ -5,7 +5,7 @@ import { inject, Injectable } from "@angular/core";
     providedIn: 'root'
 })
 export class OpenSourceLlmService {
-    private apiUrl = 'http://127.0.0.1:3032/api/v1/chat?message='; // Update with your backend API URL
+    private apiUrl = 'https://open-bills-services.onrender.com/api/v1/chat?message='; // Update with your backend API URL
     private http = inject(HttpClient);
 
     sendMessage(message: string,llm:string) {
@@ -21,7 +21,7 @@ export class OpenSourceLlmService {
     sendMessageStream(message: string,
         onData: (chunk: string) => void, onclose: () => void) {
     const source = new EventSource(
-      `http://127.0.0.1:3032/api/v1/chat-stream?message=${encodeURIComponent(message)}`
+      `https://open-bills-services.onrender.com/api/v1/chat-stream?message=${encodeURIComponent(message)}`
     );
 
     source.onmessage = (event) => onData(event.data);

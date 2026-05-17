@@ -24,13 +24,11 @@ constructor(private openSourceLlmService: OpenSourceLlmService) {}
 
 ngOnInit() {
         this.models.set([
-            { name: 'GPT-5.2', code: 'gpt-5.1' },
-            { name: 'GPT-5-MINI', code: 'gpt-5-mini' },
-            { name: 'GPT-5-NANO', code: 'gpt-5-nano' },
+            { name: 'GPT-5.1', code: 'gpt-5.1' },
             { name: 'GPT-4.1', code: 'gpt-4.1' },
             { name: 'GPT-4.1-MINI', code: 'gpt-4.1-mini' },
-            { name: 'Claude Opus 4.7', code: '' },
-            { name: 'Claude Sonnet 4.6', code: '' }
+            // { name: 'Claude Opus 4.7', code: '' },
+            // { name: 'Claude Sonnet 4.6', code: '' }
         ]);
     }
 
